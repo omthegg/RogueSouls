@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cc16h16o7xlua"]
+
+[ext_resource type="Script" uid="uid://ch5mbtgi80e6g" path="res://source/scene_manager/scene_manager.gd" id="1_ivaf7"]
+[ext_resource type="PackedScene" uid="uid://bhq2uaxbx5pvw" path="res://source/test_scene/test_scene.tscn" id="2_y51ae"]
+[ext_resource type="PackedScene" uid="uid://vs6exelxqsyh" path="res://source/attributes_display/attributes_display.tscn" id="3_7eoyu"]
+[ext_resource type="PackedScene" uid="uid://bvqske77xrqxv" path="res://source/player/player.tscn" id="3_ikhl4"]
+
+[sub_resource type="Theme" id="Theme_7eoyu"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
+
+[node name="SceneManager" type="Node3D" unique_id=712794840]
+script = ExtResource("1_ivaf7")
+
+[node name="TestScene" parent="." unique_id=1043477563 instance=ExtResource("2_y51ae")]
+
+[node name="UI" type="Control" parent="." unique_id=1137139713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7eoyu")
+
+[node name="AttributesDisplay" parent="UI" unique_id=1074573352 instance=ExtResource("3_7eoyu")]
+layout_mode = 1
+
+[node name="Player" parent="." unique_id=913993741 instance=ExtResource("3_ikhl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)

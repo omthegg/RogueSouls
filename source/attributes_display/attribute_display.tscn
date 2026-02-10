@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://je0gk82j7m7"]
+
+[node name="AttributeDisplay" type="Control" unique_id=720122038]
+custom_minimum_size = Vector2(256, 24)
+layout_mode = 3
+anchor_right = 0.22222222
+anchor_bottom = 0.037037037
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="." unique_id=375121662]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.75025
+anchor_bottom = 1.0
+offset_right = -0.06400299
+text = "Attribute name"
+metadata/_edit_use_anchors_ = true
+
+[node name="NumberLabel" type="Label" parent="." unique_id=1019107845]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_right = 0.99975
+anchor_bottom = 1.0
+offset_right = 0.063999176
+offset_bottom = -1.0
+text = "Num"
+metadata/_edit_use_anchors_ = true

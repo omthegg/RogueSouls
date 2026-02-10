@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvqske77xrqxv"]
+
+[ext_resource type="Script" uid="uid://hcsmvnvlguvb" path="res://source/player/player.gd" id="1_jct2x"]
+[ext_resource type="PackedScene" uid="uid://b1owjo0l1msv3" path="res://source/character_controller/character_controller.tscn" id="2_xim07"]
+[ext_resource type="Script" uid="uid://d0uqhbsx4hrtc" path="res://source/attributes/attributes.gd" id="3_u10tu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jct2x"]
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=913993741]
+script = ExtResource("1_jct2x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=264079570]
+shape = SubResource("CapsuleShape3D_jct2x")
+
+[node name="CharacterController" parent="." unique_id=1786396887 instance=ExtResource("2_xim07")]
+
+[node name="Attributes" type="Node" parent="." unique_id=991128009]
+script = ExtResource("3_u10tu")
+metadata/_custom_type_script = "uid://d0uqhbsx4hrtc"

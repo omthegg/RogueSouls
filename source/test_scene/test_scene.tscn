@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bhq2uaxbx5pvw"]
+
+[ext_resource type="Texture2D" uid="uid://c8cbi4i14q137" path="res://textures/PavingStones002.jpg" id="2_jkhq1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f33vi"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_2h2lk"]
+sky_material = SubResource("ProceduralSkyMaterial_f33vi")
+
+[sub_resource type="Environment" id="Environment_jkhq1"]
+background_mode = 2
+sky = SubResource("Sky_2h2lk")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipkq8"]
+albedo_color = Color(0.546875, 0.546875, 0.546875, 1)
+albedo_texture = ExtResource("2_jkhq1")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[node name="TestScene" type="Node3D" unique_id=1043477563]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1023494953]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1469172681]
+environment = SubResource("Environment_jkhq1")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=989406836]
+use_collision = true
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_ipkq8")
