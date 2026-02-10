@@ -40,11 +40,11 @@ func _physics_process(delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction:Vector3 = (character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		character.velocity.x = move_toward(character.velocity.x, direction.x * speed, speed * 10 * delta)
-		character.velocity.z = move_toward(character.velocity.z, direction.z * speed, speed * 10 * delta)
+		character.velocity.x = lerp(character.velocity.x, direction.x * speed, speed * 4.0 * delta)
+		character.velocity.z = lerp(character.velocity.z, direction.z * speed, speed * 4.0 * delta)
 	else:
-		character.velocity.x = move_toward(character.velocity.x, 0, speed * 10 * delta)
-		character.velocity.z = move_toward(character.velocity.z, 0, speed * 10 * delta)
+		character.velocity.x = lerp(character.velocity.x, 0.0, speed * 4.0 * delta)
+		character.velocity.z = lerp(character.velocity.z, 0.0, speed * 4.0 * delta)
 	
 	character.move_and_slide()
 
@@ -67,10 +67,12 @@ func head_bob(delta:float) -> void:
 		target_pos.y = -abs(sin(t*2.0*PI)) / 10.0
 		target_pos.x = (cos(t*2.0*PI)) / 10.0
 	
-	if abs(character.velocity.y) > 0.1:
+	if abs(character.velocity.y) > 0.1 or !character.is_on_floor():
 		target_pos = Vector2.ZERO
+		#target_pos.x = lerp(target_pos.x, 0.0, 25.0 * delta)
+		#target_pos.y = lerp(target_pos.y, 0.0, 25.0 * delta)
 	
-	camera.position.x = move_toward(camera.position.x, target_pos.x, 1.0 * delta)
-	camera.position.y = move_toward(camera.position.y, target_pos.y, 1.0 * delta)
+	camera.position.x = lerp(camera.position.x, target_pos.x, 50.0 * delta)
+	camera.position.y = lerp(camera.position.y, target_pos.y, 50.0 * delta)
 	
 	#$Sprite2D.position = target_pos * 30.0
