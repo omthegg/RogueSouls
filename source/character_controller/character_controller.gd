@@ -72,7 +72,7 @@ func head_bob(delta:float) -> void:
 		#target_pos.x = lerp(target_pos.x, 0.0, 25.0 * delta)
 		#target_pos.y = lerp(target_pos.y, 0.0, 25.0 * delta)
 	
-	camera.position.x = lerp(camera.position.x, target_pos.x, 50.0 * delta)
-	camera.position.y = lerp(camera.position.y, target_pos.y, 50.0 * delta)
+	camera.position.x = lerp(camera.position.x, target_pos.x, 10.0 * delta)
+	camera.position.y = lerp(camera.position.y, target_pos.y, 10.0 * delta)
 	
 	#$Sprite2D.position = target_pos * 30.0

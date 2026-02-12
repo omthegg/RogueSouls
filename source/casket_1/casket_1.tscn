@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cm3nboufnvio2"]
+
+[ext_resource type="PackedScene" uid="uid://cnicy765bikfn" path="res://models/casket1/casket1.blend" id="1_26glf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26glf"]
+size = Vector3(0.90000004, 0.8, 2.1000001)
+
+[node name="casket1" unique_id=527032591 instance=ExtResource("1_26glf")]
+
+[node name="Top" parent="." index="1" unique_id=208795199]
+transform = Transform3D(0.9969173, 0, -0.0784591, 0, 1, 0, 0.0784591, 0, 0.9969173, 0, 0, -0.2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1096192870]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1171879687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.4, -2.9802322e-08)
+shape = SubResource("BoxShape3D_26glf")

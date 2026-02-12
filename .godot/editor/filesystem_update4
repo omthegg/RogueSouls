@@ -1,4 +1,1 @@
-res://source/scene_manager/scene_manager.tscn
-res://source/scene_manager/scene_manager.gd
-res://source/character_controller/character_controller.tscn
-res://source/character_controller/character_controller.gd
+res://source/test_scene/test_scene.tscn
