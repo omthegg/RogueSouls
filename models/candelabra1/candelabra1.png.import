@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpkvit6v7tjd"
-path="res://.godot/imported/casket1.jpg-5b2ab99fcdcd2b7e4cee0d1bc92aceef.ctex"
+uid="uid://bkfdoo4np11gw"
+path="res://.godot/imported/candelabra1.png-edfe1a6eb035f59a2fc025c5967ab127.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/casket1/casket1.jpg"
-dest_files=["res://.godot/imported/casket1.jpg-5b2ab99fcdcd2b7e4cee0d1bc92aceef.ctex"]
+source_file="res://models/candelabra1/candelabra1.png"
+dest_files=["res://.godot/imported/candelabra1.png-edfe1a6eb035f59a2fc025c5967ab127.ctex"]
 
 [params]
 
