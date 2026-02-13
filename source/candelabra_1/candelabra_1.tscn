@@ -1,9 +1,54 @@
 [gd_scene format=3 uid="uid://erhn85cjrhgo"]
 
 [ext_resource type="PackedScene" uid="uid://blm5mhmu5wy88" path="res://models/candelabra1/candelabra1.blend" id="1_g3hk8"]
+[ext_resource type="Shader" uid="uid://b2vofdiooqtg5" path="res://source/fire/fire.gdshader" id="2_mehf2"]
+[ext_resource type="Texture2D" uid="uid://cq8u83bx5mon2" path="res://source/fire/noise_texture.tres" id="3_h7ago"]
+[ext_resource type="Texture2D" uid="uid://g65ug3kv7jb8" path="res://textures/fire_mask.png" id="4_8cwmj"]
+
+[sub_resource type="Gradient" id="Gradient_pjg5r"]
+offsets = PackedFloat32Array(0.23737374, 0.82323235)
+colors = PackedColorArray(1, 0, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_43buy"]
+gradient = SubResource("Gradient_pjg5r")
+width = 32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8x8fd"]
+render_priority = 0
+shader = ExtResource("2_mehf2")
+shader_parameter/shape_texture = ExtResource("4_8cwmj")
+shader_parameter/noise_texture = ExtResource("3_h7ago")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_43buy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kusrk"]
+material = SubResource("ShaderMaterial_8x8fd")
+size = Vector2(0.05, 0.1)
 
 [node name="candelabra1" unique_id=2002353001 instance=ExtResource("1_g3hk8")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=729565195]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 light_color = Color(0.1875, 0, 1, 1)
+light_size = 0.5
+
+[node name="Flames" type="Node3D" parent="." index="2" unique_id=1546109572]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Flames" index="0" unique_id=385876769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57, 0)
+mesh = SubResource("QuadMesh_kusrk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Flames" index="1" unique_id=1174328215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 0.495, 0.075)
+mesh = SubResource("QuadMesh_kusrk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Flames" index="2" unique_id=917778886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, 0.495, 0.075)
+mesh = SubResource("QuadMesh_kusrk")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Flames" index="3" unique_id=2056857885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 0.495, -0.075)
+mesh = SubResource("QuadMesh_kusrk")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Flames" index="4" unique_id=1872452923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, 0.495, -0.075)
+mesh = SubResource("QuadMesh_kusrk")
