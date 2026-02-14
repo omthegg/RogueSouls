@@ -7,7 +7,7 @@ size = Vector3(0.90000004, 0.8, 2.1000001)
 
 [node name="casket1" unique_id=527032591 instance=ExtResource("1_26glf")]
 
-[node name="Top" parent="." index="1" unique_id=208795199]
+[node name="Top" parent="." index="1" unique_id=1461294284]
 transform = Transform3D(0.9969173, 0, -0.0784591, 0, 1, 0, 0.0784591, 0, 0.9969173, 0, 0, -0.2)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1096192870]

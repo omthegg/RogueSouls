@@ -1,44 +1,14 @@
 [gd_scene format=3 uid="uid://bhq2uaxbx5pvw"]
 
-[ext_resource type="PackedScene" uid="uid://cm3nboufnvio2" path="res://source/casket_1/casket_1.tscn" id="2_ipkq8"]
-[ext_resource type="Texture2D" uid="uid://c8cbi4i14q137" path="res://textures/PavingStones002.jpg" id="2_jkhq1"]
-[ext_resource type="PackedScene" uid="uid://erhn85cjrhgo" path="res://source/candelabra_1/candelabra_1.tscn" id="3_ipkq8"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f33vi"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_2h2lk"]
-sky_material = SubResource("ProceduralSkyMaterial_f33vi")
-
-[sub_resource type="Environment" id="Environment_jkhq1"]
-background_mode = 1
-background_color = Color(0.015218096, 0.023985624, 0.11458331, 1)
-sky = SubResource("Sky_2h2lk")
-ambient_light_source = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipkq8"]
-albedo_color = Color(0.546875, 0.546875, 0.546875, 1)
-albedo_texture = ExtResource("2_jkhq1")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-uv1_world_triplanar = true
-texture_filter = 2
+[ext_resource type="Environment" uid="uid://bg40lr61c0x8c" path="res://source/env/env1.tres" id="1_8xgs2"]
+[ext_resource type="PackedScene" uid="uid://erhn85cjrhgo" path="res://source/candelabra_1/candelabra_1.tscn" id="4_8xgs2"]
+[ext_resource type="PackedScene" uid="uid://cm3nboufnvio2" path="res://source/casket_1/casket_1.tscn" id="4_oeeju"]
+[ext_resource type="Material" uid="uid://kqpycnf7xtkf" path="res://source/level_materials/paving_stones_002.tres" id="4_sab1d"]
 
 [node name="TestScene" type="Node3D" unique_id=1043477563]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1023494953]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-visible = false
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1469172681]
-environment = SubResource("Environment_jkhq1")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=989406836]
-use_collision = true
-size = Vector3(30, 1, 30)
-material = SubResource("StandardMaterial3D_ipkq8")
+environment = ExtResource("1_8xgs2")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1589376468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7057881, 0)
@@ -48,13 +18,13 @@ shadow_enabled = true
 omni_range = 20.0
 omni_attenuation = 0.0
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=574184346]
-size = Vector3(30, 10, 30)
-origin_offset = Vector3(0, 1.8, 0)
-enable_shadows = true
-
-[node name="casket1" parent="." unique_id=527032591 instance=ExtResource("2_ipkq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
-
-[node name="candelabra1" parent="." unique_id=2002353001 instance=ExtResource("3_ipkq8")]
+[node name="candelabra1" parent="." unique_id=2002353001 instance=ExtResource("4_8xgs2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.315, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1458338843]
+material_override = ExtResource("4_sab1d")
+use_collision = true
+size = Vector3(30, 1, 30)
+
+[node name="casket1" parent="." unique_id=527032591 instance=ExtResource("4_oeeju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)

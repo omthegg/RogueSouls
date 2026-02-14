@@ -2,9 +2,10 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cmcdr"]
 noise_type = 0
+seed = 10
 
 [resource]
-width = 32
-height = 32
+width = 8
+height = 8
 noise = SubResource("FastNoiseLite_cmcdr")
 seamless = true

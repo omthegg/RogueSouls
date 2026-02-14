@@ -64,7 +64,7 @@ func head_bob(delta:float) -> void:
 	var target_pos:Vector2 = Vector2.ZERO
 	if input_dir.length() > 0.0:
 		var t:float = Time.get_ticks_msec()/1000.0
-		target_pos.y = -abs(sin(t*2.0*PI)) / 10.0
+		target_pos.y = abs(sin(t*2.0*PI)) / 10.0
 		target_pos.x = (cos(t*2.0*PI)) / 10.0
 	
 	if abs(character.velocity.y) > 0.1 or !character.is_on_floor():
