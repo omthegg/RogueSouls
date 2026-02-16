@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bvqske77xrqxv" path="res://source/player/player.tscn" id="3_ikhl4"]
 [ext_resource type="PackedScene" uid="uid://cfnrscvrx0ci1" path="res://source/debug_info/debug_info.tscn" id="4_2r2ke"]
 [ext_resource type="PackedScene" uid="uid://bhq2uaxbx5pvw" path="res://source/test_scene/test_scene.tscn" id="5_2r2ke"]
+[ext_resource type="PackedScene" uid="uid://bmobeycrjux3y" path="res://models/shamshir/shamshir.blend" id="6_nyf36"]
+[ext_resource type="PackedScene" uid="uid://prbfpne78guy" path="res://models/revolver1/revolver1.blend" id="7_077nh"]
 
 [sub_resource type="Theme" id="Theme_7eoyu"]
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -35,3 +37,9 @@ layout_mode = 1
 
 [node name="Player" parent="." unique_id=913993741 instance=ExtResource("3_ikhl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="shamshir" parent="." unique_id=52810414 instance=ExtResource("6_nyf36")]
+transform = Transform3D(-0.009857744, -0.9991787, 0.039305087, 0.9978297, -0.012388542, -0.064673714, 0.06510751, 0.038582243, 0.9971321, -2.703, 1.322, -0.248)
+
+[node name="revolver1" parent="." unique_id=270777829 instance=ExtResource("7_077nh")]
+transform = Transform3D(-3.7855173e-08, -0.8660254, -0.5, 1, -4.371139e-08, 0, -2.1855694e-08, -0.5, 0.8660254, -3.0295417, 1.3239117, -0.56919503)

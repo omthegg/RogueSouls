@@ -1,6 +1,4 @@
-res://source/candelabra_1/candelabra_1.tscn
+res://source/scene_manager/scene_manager.tscn
 res://source/env/env1.tres
 res://source/fire/fire.gdshader
 res://source/fire/noise_texture.tres
-res://source/candelabra_1/candelabra_1.gd
-res://source/test_scene/test_scene.tscn
